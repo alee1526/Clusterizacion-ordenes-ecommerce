@@ -1,4 +1,3 @@
-```markdown
 # Clusterización de Órdenes de Supermercados en Plataformas Digitales
 
 Este proyecto realiza una clusterización de 500,000 órdenes de supermercados provenientes de una plataforma digital de pedidos (PedidosYa), utilizando los algoritmos **K-Means** y **Gaussian Mixture Models (GMM)** para identificar patrones de compra. Ambos métodos se implementan con **k=5 clusters**, explorando y comparando sus resultados para detectar distintos tipos de comportamientos de consumo. El trabajo forma parte del curso **Taller de Analítica de Datos** del **Master en Big Data** de la **Universidad ORT Uruguay**.
@@ -17,7 +16,6 @@ El análisis incluye un **Análisis Exploratorio de Datos (EDA)** inicial y la g
 - **`EDA.ipynb`**: Notebook que realiza el análisis exploratorio de datos (EDA), generando visualizaciones, estadísticas descriptivas y la tabla para clusterización.
 - **`Gaussian.ipynb`**: Notebook que implementa la clusterización con GMM (k=5), incluyendo preprocesamiento, reducción de dimensionalidad (PCA), modelado y visualización.
 - **`Kmeans.ipynb`**: Notebook que implementa la clusterización con K-Means (k=5), incluyendo preprocesamiento, método del codo, modelado y visualización.
-- **`Obligatorio TAD - Entrega 2 - DiazDiazZalovich.pdf`**: Informe completo con detalles del análisis y resultados.
 
 **Nota**: Los archivos de datos (e.g., órdenes, productos, embeddings) no están incluidos en el repositorio debido a su naturaleza confidencial o tamaño. Los notebooks asumen que los datos están disponibles localmente en el formato descrito en el informe.
 
@@ -45,8 +43,8 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 1. **Clonar el repositorio**:
 
    ```bash
-   git clone https://github.com/alee1526/Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales.git
-   cd Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales
+   git clone https://github.com/alee1526/Clusterizacion-ordenes-ecommerce.git
+   cd Clusterizacion-ordenes-ecommerce
    ```
 
 2. **Obtener los datos**:
@@ -96,4 +94,3 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ## Créditos
 
 Desarrollado como parte del curso **Taller de Analítica de Datos**, **Master en Big Data**, **Universidad ORT Uruguay**.
-```
