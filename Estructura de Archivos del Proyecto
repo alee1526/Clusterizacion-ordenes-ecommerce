@@ -1,0 +1,56 @@
+# Estructura de Archivos del Proyecto
+
+Este documento presenta la estructura de archivos del proyecto "Clusterización de Órdenes de Supermercados en Plataformas Digitales" en un formato de árbol, detallando los archivos y carpetas utilizados.
+
+## Árbol de Archivos
+
+```
+Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales/
+├── EDA.ipynb
+├── Gaussian.ipynb
+├── Kmeans.ipynb
+├── README.md
+├── data/
+│   ├── ordenes_caso_peya.csv
+│   ├── productos_embeddings_peya.csv
+│   ├── productos_orders_peya.csv
+│   ├── tabla_para_clusterizacion.csv
+│   ├── GMM_resultados.csv
+│   ├── kmeans_resultados.csv
+│   ├── EDA_embeddings_df.csv
+│   ├── EDA_prod_por_orden.csv
+│   ├── EDA_prod_por_orden_con_duplicados.csv
+│   ├── GMM_tsne_results.csv
+│   ├── kmeans_pca_results.csv
+│   ├── kmeans_tsne_results.csv
+│   ├── kmeans_wcss_df.csv
+│   └── kmeans_elem_min.csv
+```
+
+## Descripción de Archivos
+
+- **EDA.ipynb**: Notebook para el Análisis Exploratorio de Datos (EDA), genera visualizaciones y la tabla para clusterización.
+- **Gaussian.ipynb**: Notebook que implementa la clusterización con Gaussian Mixture Models (GMM, k=5).
+- **Kmeans.ipynb**: Notebook que implementa la clusterización con K-Means (k=5).
+- **README.md**: Documento principal con descripción, instrucciones y resultados del proyecto.
+- **data/**: Carpeta que contiene los archivos de datos:
+  - **ordenes_caso_peya.csv**: Tabla madre con información de órdenes.
+  - **productos_embeddings_peya.csv**: Tabla madre con información de productos y embeddings.
+  - **productos_orders_peya.csv**: Tabla madre que relaciona órdenes con productos.
+  - **tabla_para_clusterizacion.csv**: Tabla generada para la clusterización.
+  - **GMM_resultados.csv**: Resultados de las etiquetas de clusterización GMM.
+  - **kmeans_resultados.csv**: Resultados de las etiquetas de clusterización K-Means.
+  - **EDA_embeddings_df.csv**: Archivo intermedio del EDA.
+  - **EDA_prod_por_orden.csv**: Archivo intermedio del EDA.
+  - **EDA_prod_por_orden_con_duplicados.csv**: Archivo intermedio del EDA.
+  - **GMM_tsne_results.csv**: Resultados de visualización TSNE para GMM.
+  - **kmeans_pca_results.csv**: Resultados de PCA para K-Means.
+  - **kmeans_tsne_results.csv**: Resultados de visualización TSNE para K-Means.
+  - **kmeans_wcss_df.csv**: Resultados del método del codo para K-Means.
+  - **kmeans_elem_min.csv**: Archivo intermedio de evaluación para K-Means.
+
+## Notas
+
+- Los archivos en la carpeta `data/` son esenciales para la ejecución de los notebooks.
+- Los archivos intermedios (e.g., `EDA_*.csv`) permiten agilizar la ejecución al evitar recalcular pasos costosos.
+- El repositorio está disponible en: [https://github.com/alee1526/Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales](https://github.com/alee1526/Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales).
