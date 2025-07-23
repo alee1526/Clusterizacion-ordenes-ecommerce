@@ -1,6 +1,7 @@
-# Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales
+```markdown
+# Clusterización de Órdenes de Supermercados en Plataformas Digitales
 
-Este proyecto realiza una clusterización de 500,000 órdenes de supermercados provenientes de una plataforma digital de pedidos (PedidosYa), utilizando los algoritmos K-Means y Gaussian Mixture Models (GMM) para identificar patrones de compra. Ambos métodos se implementan con k=5 clusters, explorando y comparando sus resultados para detectar distintos tipos de comportamientos de consumo. El trabajo forma parte del curso "Taller de Analítica de Datos" del Master en Big Data de la Universidad ORT Uruguay.
+Este proyecto realiza una clusterización de 500,000 órdenes de supermercados provenientes de una plataforma digital de pedidos (PedidosYa), utilizando los algoritmos **K-Means** y **Gaussian Mixture Models (GMM)** para identificar patrones de compra. Ambos métodos se implementan con **k=5 clusters**, explorando y comparando sus resultados para detectar distintos tipos de comportamientos de consumo. El trabajo forma parte del curso **Taller de Analítica de Datos** del **Master en Big Data** de la **Universidad ORT Uruguay**.
 
 ## Descripción
 
@@ -9,23 +10,16 @@ El objetivo es segmentar las órdenes de supermercados según características t
 - **K-Means**: Método basado en centroides para agrupar órdenes en 5 clusters.
 - **Gaussian Mixture Models (GMM)**: Modelo probabilístico que asigna órdenes a 5 clusters basados en distribuciones gaussianas.
 
-El análisis incluye un Análisis Exploratorio de Datos (EDA) inicial y la generación de una tabla analítica para la clusterización, seguida de la aplicación y evaluación de ambos modelos.
+El análisis incluye un **Análisis Exploratorio de Datos (EDA)** inicial y la generación de una tabla analítica para la clusterización, seguida de la aplicación y evaluación de ambos modelos.
 
 ## Estructura del Proyecto
 
-- `EDA.ipynb`: Notebook que realiza el análisis exploratorio de datos (EDA) sobre las tablas madre, generando visualizaciones, estadísticas descriptivas y la tabla para clusterización (`tabla_para_clusterizacion.csv`).
-- `Gaussian.ipynb`: Notebook que implementa la clusterización con GMM (k=5), incluyendo preprocesamiento, reducción de dimensionalidad (PCA), modelado y visualización.
-- `Kmeans.ipynb`: Notebook que implementa la clusterización con K-Means (k=5), incluyendo preprocesamiento, método del codo, modelado y visualización.
-- `ordenes_caso_peya.csv`: Tabla madre con información detallada de las órdenes (order_id, día, hora, vendor_id, user_id, monto total, descuentos).
-- `productos_embeddings_peya.csv`: Tabla madre con información de productos, incluyendo embeddings (product_name_hash, level_one_hash, level_two_hash, emb_str).
-- `productos_orders_peya.csv`: Tabla madre que relaciona órdenes con productos (order_id, product_name_hash).
-- `tabla_para_clusterizacion.csv`: Tabla generada por `EDA.ipynb`, con variables derivadas para la clusterización (e.g., total_amount, cant_prod_por_ped, log_sum_pairwise_cooc).
-- `GMM_resultados.csv`: Resultados de las etiquetas de clusterización GMM.
-- `kmeans_resultados.csv`: Resultados de las etiquetas de clusterización K-Means.
-- **Archivos intermedios**:
-  - `EDA_embeddings_df.csv`, `EDA_prod_por_orden.csv`, `EDA_prod_por_orden_con_duplicados.csv`: Generados en EDA para agilizar ejecución.
-  - `GMM_tsne_results.csv`, `kmeans_pca_results.csv`, `kmeans_tsne_results.csv`, `kmeans_wcss_df.csv`, `kmeans_elem_min.csv`: Resultados intermedios de visualización y evaluación.
-- `Obligatorio TAD - Entrega 2 - DiazDiazZalovich.pdf`: Informe completo con detalles del análisis y resultados.
+- **`EDA.ipynb`**: Notebook que realiza el análisis exploratorio de datos (EDA), generando visualizaciones, estadísticas descriptivas y la tabla para clusterización.
+- **`Gaussian.ipynb`**: Notebook que implementa la clusterización con GMM (k=5), incluyendo preprocesamiento, reducción de dimensionalidad (PCA), modelado y visualización.
+- **`Kmeans.ipynb`**: Notebook que implementa la clusterización con K-Means (k=5), incluyendo preprocesamiento, método del codo, modelado y visualización.
+- **`Obligatorio TAD - Entrega 2 - DiazDiazZalovich.pdf`**: Informe completo con detalles del análisis y resultados.
+
+**Nota**: Los archivos de datos (e.g., órdenes, productos, embeddings) no están incluidos en el repositorio debido a su naturaleza confidencial o tamaño. Los notebooks asumen que los datos están disponibles localmente en el formato descrito en el informe.
 
 ## Requisitos
 
@@ -55,23 +49,31 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
    cd Clusterizacion-de-ordenes-de-Supermercados-en-Plataformas-Digitales
    ```
 
-2. **Instalar dependencias**: Ejecuta el comando anterior o asegúrate de tener las bibliotecas listadas.
+2. **Obtener los datos**:
 
-3. **Ejecutar el EDA**:
+   - Los notebooks requieren archivos de datos (e.g., `ordenes_caso_peya.csv`, `productos_embeddings_peya.csv`, `productos_orders_peya.csv`, `tabla_para_clusterizacion.csv`). Estos no están incluidos en el repositorio.
+   - Asegúrate de tener los datos en el directorio correcto o ajusta las rutas en los notebooks según corresponda.
+
+3. **Instalar dependencias**:
+
+   - Ejecuta el comando de instalación de bibliotecas mencionado arriba o verifica que estén instaladas.
+
+4. **Ejecutar el EDA**:
 
    - Abre `EDA.ipynb` en Jupyter Notebook.
-   - Ejecuta las celdas para explorar los datos y generar `tabla_para_clusterizacion.csv`.
-   - Si prefieres evitar cálculos costosos, usa los archivos CSV intermedios (`EDA_*.csv`) ajustando la variable `Flag = False`.
+   - Asegúrate de que los datos requeridos estén disponibles.
+   - Ejecuta las celdas para explorar los datos y generar la tabla para clusterización.
+   - Si tienes archivos intermedios precomputados, ajusta la variable `Flag = False` en el notebook para cargarlos y ahorrar tiempo.
 
-4. **Ejecutar las clusterizaciones**:
+5. **Ejecutar las clusterizaciones**:
 
-   - **K-Means**: Abre `Kmeans.ipynb` y ejecuta las celdas. Requiere `tabla_para_clusterizacion.csv`.
-   - **GMM**: Abre `Gaussian.ipynb` y ejecuta las celdas. También usa `tabla_para_clusterizacion.csv`.
-   - Los resultados se guardan en `kmeans_resultados.csv` y `GMM_resultados.csv`. Usa `Flag = False` para cargar resultados precomputados y ahorrar tiempo.
+   - **K-Means**: Abre `Kmeans.ipynb` y ejecuta las celdas. Requiere la tabla generada en el EDA.
+   - **GMM**: Abre `Gaussian.ipynb` y ejecuta las celdas. También usa la tabla del EDA.
+   - Los resultados se guardan en archivos CSV (e.g., `kmeans_resultados.csv`, `GMM_resultados.csv`). Usa `Flag = False` para cargar resultados precomputados si están disponibles.
 
-5. **Explorar resultados**:
+6. **Explorar resultados**:
 
-   - Revisa las visualizaciones (e.g., TSNE, gráficos de barras) en los notebooks.
+   - Revisa las visualizaciones (e.g., TSNE, gráficos de barras) en los notebooks para interpretar los clusters.
 
 ## Resultados
 
@@ -93,4 +95,5 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 
 ## Créditos
 
-Desarrollado como parte del curso "Taller de Analítica de Datos", Master en Big Data, Universidad ORT Uruguay.
+Desarrollado como parte del curso **Taller de Analítica de Datos**, **Master en Big Data**, **Universidad ORT Uruguay**.
+```
