@@ -1,0 +1,5 @@
+# Evitar subir datos pesados
+*.csv
+*.sav
+*.parquet
+data/
